@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <title>{$Titulo}</title>
+    <title>Doramas</title>
 </head>
-<body id="favoritos">
+<body id="fava">
    {include file="header.tpl"}
     <div class="container">
         <div>
@@ -29,7 +29,7 @@
         </table>
         <form>
             <div class="form-group">
-                <h4>Ingresa tu <strong>Dorama {$Titulo} </strong>  para que todos puedan conocerlo!!!</h4>
+                <h4>Ingresa tu <strong>Dorama {$titulo} </strong>  para que todos puedan conocerlo!!!</h4>
             </div>
             <div class="form-group">
                 <input type="text" id="dorama" class="miDorama form-control" id="formGroupExampleInput" placeholder="Dorama">
@@ -56,7 +56,6 @@
         <button type="button" id="borrar" class="btn btn-outline-success">Borrar</button>
     </div>
     {include file="footer.tpl"}
-    <script type="text/javascript" src="js/json.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>

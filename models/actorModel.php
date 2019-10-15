@@ -7,8 +7,8 @@
     public function GetActores(){
         $sentence = $this->db->prepare( "select * from actor");
         $sentence->execute();
-        $actor = $sentence->fetchAll(PDO::FETCH_OBJ);
-        return $actor;
+        return $sentence->fetchAll(PDO::FETCH_OBJ);
+        
     }
     public function InsertarActor($nombre, $edad, $producciones){
         $sentence = $this->db->prepare("INSERT INTO actor(nombre,edad,producciones) VALUES(?,?,?)");

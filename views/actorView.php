@@ -5,16 +5,19 @@ require_once('libs/Smarty.class.php');
 
 class actorView {
 
+    private $smarty;
+
     function __construct(){
+        $this->smarty = new Smarty();
+        $this->smarty->assign('basehref', BASE_URL);
+      
 
     }
 
     public function DisplayActores($actores){
-
-        $smarty = new Smarty();
-        $smarty->assign('lista_nombre',$actores);
-        $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->display('templates/ver_actores.tpl');
+        $this->smarty->assign('lista_nombre',$actores);
+        $this->smarty->assign('basehref',BASE_URL);
+        $this->smarty->display('./templates/actores.tpl');
     }
 }
 

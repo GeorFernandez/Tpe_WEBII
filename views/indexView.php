@@ -9,10 +9,10 @@ class indexView {
 
     }
 
-    public function DisplayIndex($Titulo){
+    public function DisplayIndex($titulo){
 
         $smarty = new Smarty();
-        $smarty->assign('Titulo',$Titulo);
+        $smarty->assign('Titulo',$titulo);
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->display('templates/index.tpl');
     }  

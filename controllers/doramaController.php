@@ -1,6 +1,6 @@
 <?php
-require_once "./models/doramaModel.php";
-require_once "./views/doramaView.php";
+require_once ('models/doramaModel.php');
+require_once ('views/doramaView.php');
 
 class doramaController {
 
