@@ -1,6 +1,6 @@
 <?php
-require_once ('./models/actorModel.php');
-require_once ('./views/actorView.php');
+    require_once ('./models/actorModel.php');
+    require_once ('./views/actorView.php');
 
     class actorController {
 
@@ -16,21 +16,21 @@ require_once ('./views/actorView.php');
              $actores = $this->model->GetActores();
              $this->view->DisplayActores($actores);
         }
-        // public function InsertarActor(){
+        public function InsertarActor(){
             
-        //     $this->model->InsertarActor($_POST['nombre'],$_POST['edad'],$_POST['producciones']);
-        //     header("Location: " . BASE_URL);
-        // }
-        // public function EditarActor($id_actor,$nombre,$edad,$producciones){
+            $this->model->InsertarActor($_POST['nombre'],$_POST['edad'],$_POST['producciones']);
+        header("Location: " . BASE_URL);
+        }
+        public function EditarActor($id_actor,$nombre,$edad,$producciones){
             
-        //     $this->model->EditarActor($id_actor,$nombre,$edad,$producciones);
-        //     header("Location: " . BASE_URL);
-        // }
-        // public function BorrarActor($id_actor,$nombre,$edad,$producciones){
+            $this->model->EditarActor($id_actor,$nombre,$edad,$producciones);
+        header("Location: " . BASE_URL);
+        }
+        public function BorrarActor($id_actor,$nombre,$edad,$producciones){
             
-        //     $this->model->BorrarActor($id_actor,$nombre,$edad,$producciones);
-        //     header("Location: " . BASE_URL);
-        // }
+            $this->model->BorrarActor($id_actor,$nombre,$edad,$producciones);
+             header("Location: " . BASE_URL);
+        }
     
     }
 ?>

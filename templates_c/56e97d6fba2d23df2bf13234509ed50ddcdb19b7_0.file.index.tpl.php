@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-14 23:38:52
+/* Smarty version 3.1.33, created on 2019-10-15 17:01:50
   from 'C:\xampp\htdocs\Tpe_WEBII\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da4eaec95a068_86741753',
+  'unifunc' => 'content_5da5df5e5afc71_71403676',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '56e97d6fba2d23df2bf13234509ed50ddcdb19b7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tpe_WEBII\\templates\\index.tpl',
-      1 => 1570398169,
+      1 => 1571151692,
       2 => 'file',
     ),
   ),
@@ -22,27 +22,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5da4eaec95a068_86741753 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
+function content_5da5df5e5afc71_71403676 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equipv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <title><?php echo $_smarty_tpl->tpl_vars['Titulo']->value;?>
-</title>
+    <title>Home</title>
 </head>
 <body id="index">
    <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-    <div class="container">
+    <div class="container-fluid">
         <section>
             <div id="frase">
-                <h1>En <?php echo $_smarty_tpl->tpl_vars['Titulo']->value;?>
- Te invitamos a conocer el maravilloso mundo de los doramas. No te pierdas nuestros recomendados: </h1>
+                <h1>Te invitamos a conocer el maravilloso mundo de los doramas. No te pierdas nuestros recomendados: </h1>
             </div>
             <div class="row">
             <div class="col">
@@ -90,10 +88,10 @@ function content_5da4eaec95a068_86741753 (Smarty_Internal_Template $_smarty_tpl)
    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     <?php echo '<script'; ?>
- src="js/jquery.js"><?php echo '</script'; ?>
+ src="./js/jquery.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
- src="js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="./js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 </body>
 </html><?php }

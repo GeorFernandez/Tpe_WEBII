@@ -1,9 +1,7 @@
 #index{
     background: -webkit-linear-gradient(black 0%, crimson 50%, pink 100%);
-    height: 100%;
-    width: 100%;
+    height: 102em;
     background-repeat: no-repeat;
-    
 }
 #frase{
     width: 80%;
@@ -25,7 +23,7 @@
     -webkit-text-stroke: 1.5px rgb(22, 2, 16);
     width: 100%;
 }
-#ranking{
+/* #ranking{
     background: -webkit-linear-gradient(black 0%, #32dbc6 50%, #2c778a 100%);
     height: 100%;
     background-repeat: no-repeat;
@@ -39,7 +37,7 @@
     background: -webkit-linear-gradient(black 0%, rgb(233, 58, 58) 50%, pink 100%);
     height: 100%;
     background-repeat: no-repeat;
-}
+} */
 #logoinic{
     font-size: 100%;
     font-weight: bold;
@@ -61,7 +59,7 @@ header{
     height: 25rem;
     position: relative;
 }
-#comienzo{
+/* #comienzo{
     background-image: url(images/recuerdos.jpg);
     background-repeat: no-repeat;
     background-size: 80%;
@@ -77,20 +75,20 @@ header{
     background-position: center;
     width: 100%;
     height: 25rem;
-}
-#principio{
+} */
+/* #principio{
     background-image: url(images/ashes.jpg );
     background-repeat: no-repeat;
     background-size: 80%; 
     background-position: center;
     width: 100%;
     height: 400px;
-}
+} */
 nav.home {
     background: -webkit-radial-gradient(grey 0%, crimson 50%,black 100%);  
 }
 
-nav.contact{
+/* nav.contact{
     background: -webkit-radial-gradient(grey 0%, rgb(47, 161, 114) 50%,black 100%);  
 }
 nav.rank{
@@ -98,7 +96,7 @@ nav.rank{
 }
 nav.favorite{
     background: -webkit-radial-gradient(grey 0%, rgb(226, 176, 214) 50%,black 100%);  
-}
+} */
 form{
     margin-top: 50px;
 }

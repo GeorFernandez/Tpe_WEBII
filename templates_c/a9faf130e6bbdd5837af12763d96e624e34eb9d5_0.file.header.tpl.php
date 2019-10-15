@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-15 02:34:51
+/* Smarty version 3.1.33, created on 2019-10-15 16:44:18
   from 'C:\xampp\htdocs\Tpe_WEBII\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da5142b796f57_42120905',
+  'unifunc' => 'content_5da5db42a609a3_16171467',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9faf130e6bbdd5837af12763d96e624e34eb9d5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Tpe_WEBII\\templates\\header.tpl',
-      1 => 1571099690,
+      1 => 1571150656,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da5142b796f57_42120905 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da5db42a609a3_16171467 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
         <nav class="navbar navbar-expand-lg navbar-light home navbar fixed-top ">
             <a class="navbar-brand" href="indexView.php">Home</a>
@@ -32,7 +32,8 @@ function content_5da5142b796f57_42120905 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="actorView.php">Actores</a>
                     <a class="nav-item nav-link active" href="doramaView.php">Doramas</a>
-                                    </div>
+                    <a class="nav-item nav-link active" href="" target="_blank">Login Administrador</a> 
+                </div>
             </div>
         </nav>
 </header><?php }

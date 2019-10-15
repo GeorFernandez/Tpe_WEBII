@@ -1,29 +1,37 @@
 <?php
 require_once('controllers/actorController.php');
+require_once('controllers/indexController.php');
+require_once('Controllers/doramaController.php');
 require_once('router.php');
 
-    define('BASE_URL', 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
-    define('actor', BASE_URL . 'actor');
+define('BASE_URL', 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
+define('actor', BASE_URL . 'actor');
 
 
 $router = new Router();
-$router->addRoute('actores', 'GET', 'actorController', 'GetActores');
-$router->setDefaultRoute('actorController', 'GetActores');
+$router->setDefaultRoute('indexController', 'DisplayIndex');
+$router->addRoute('actor', 'GET', 'actorController', 'GetActores');
+$router->addRoute('actor', 'POST', 'actorController', 'InsertarActor');
+$router->addRoute('actor', 'PUT', 'actorController', 'EditarActor');
+$router->addRoute('actor', 'DELETE', 'actorController', 'BorrarActor');
+$router->addRoute('dorama', 'GET', 'doramaController', 'GetDoramas');
+$router->addRoute('actor', 'POST', 'doramaController', 'InsertarDorama');
+$router->addRoute('actor', 'PUT', 'doramaController', 'EditarDorama');
+$router->addRoute('actor', 'DELETE', 'doramaController', 'BorrarDorama');
+
 $router->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
 
 // define la tabla de ruteo
-// $router->addRoute('actores', 'POST', 'actorController', 'InsertarActor');
+//
 //$router->addRoute('tareas/:ID', 'GET', actorController, obtenerTarea);
 
 
 
 // rutea
 
-
-//$router->addRoute('index', 'GET', 'indexView', 'DisplayIndex');
  
 // require_once "Controllers/actorController.php";
-// require_once "Controllers/doramaController.php";
+
 // require_once "models/actorModel.php";
 // require_once "models/doramaModel.php";
 // require_once "views/indexView.php";
