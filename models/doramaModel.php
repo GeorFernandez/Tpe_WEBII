@@ -5,7 +5,7 @@
         $this->db = new PDO('mysql:host=localhost;'.'dbname=doramas;charset=utf8', 'root', '');
     }
     public function GetDoramas(){
-        $sentence = $this->db->prepare( "select * from dorama");
+        $sentence = $this->db->prepare("SELECT * FROM dorama");
         $sentence->execute();
         $dorama = $sentence->fetchAll(PDO::FETCH_OBJ);
         return $dorama;

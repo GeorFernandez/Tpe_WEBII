@@ -18,7 +18,7 @@ class doramaController {
     }
     public function InsertarDorama(){
         
-        $this->model->InsertarDorama($_POST['nombre'],$_POST['genero'],$_POST['sinopsis'],$_POST['cant_capitulos'],$_POST['en_emision'],$_POST['id_actor'], );
+        $this->model->InsertarDorama($_POST['nombre'],$_POST['genero'],$_POST['sinopsis'],$_POST['cant_capitulos'],$_POST['en_emision'],$_POST['id_actor']);
         header("Location: " . BASE_URL);
     }
     public function EditarDorama($id_dorama,$nombre,$genero, $sinopsis,$cant_capitulos,$en_emision,$id_actor){

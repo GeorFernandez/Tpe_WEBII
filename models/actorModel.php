@@ -5,7 +5,7 @@
         $this->db = new PDO('mysql:host=localhost;'.'dbname=doramas;charset=utf8', 'root', '');
     }
     public function GetActores(){
-        $sentence = $this->db->prepare( "select * from actor");
+        $sentence = $this->db->prepare( "SELECT * FROM actor");
         $sentence->execute();
         return $sentence->fetchAll(PDO::FETCH_OBJ);
         
