@@ -1,20 +1,13 @@
 {include file="header.tpl"}
-
-            {foreach from=$lista_actores item=actor}
-            {* {if $tarea->finalizada eq 1} *}
-                <strike><li>{$actor->nombre}: {$actor->edad}: {$actor->producciones}</li></strike>
-            {* {else}
-                <li>{$tarea->titulo}: {$tarea->descripcion} - <a href='finalizar/{$tarea->id}'>Finalizar</a> - <a href='borrar/{$tarea->id}'>Borrar</a></li>
-            {/if} *}
             
-            {/foreach}
-
+        <h1>Mis Actores</h1>
             <form action="insertar" method="post">
-            <input type="text" name="titulo" placeholder="Titulo">
-            <input type="text" name="descripcion" placeholder="Descripcion">
-            <input type="number" name="prioridad"  max="10">
-            <input type="checkbox" name="finalizada" id="finalizada">
-            <input type="submit" value="Insertar">
-        </form>
-    </body>
-</html>
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="number" name="edad"  placeholder="Edad">
+                <input type="text" name="producciones" placeholder="Producciones">
+                <input type="submit" value="Insertar">
+            </form>
+        {foreach from=$lista_actores item=actor}
+               <li> {$actor->nombre}: {$actor->edad}: {$actor->producciones} <a href='BorrarActor/{$actor->id_actor}'>BORRAR</a>     <a href='editar/{$actor->id_actor}'>EDITAR</a>  </li>
+        {/foreach}
+{include file="footer.tpl"}

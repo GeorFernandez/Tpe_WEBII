@@ -10,7 +10,6 @@ class ActoresView {
     }
 
     public function DisplayActores($actores){
-
         $smarty = new Smarty();
         $smarty->assign('titulo',"Mostrar Actores");
         $smarty->assign('BASE_URL',BASE_URL);

@@ -13,46 +13,52 @@ class ActoresController {
         $this->view = new ActoresView();
     }
     
-    public function checkLogIn(){
-        session_start();
+    // public function checkLogIn(){
+    //     session_start();
         
-        if(!isset($_SESSION['userId'])){
-            header("Location: " . URL_LOGIN);
-            die();
-        }
+    //     if(!isset($_SESSION['userId'])){
+    //         header("Location: " . URL_LOGIN);
+    //         die();
+    //     }
 
-        if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 5000)) { 
-            header("Location: " . URL_LOGOUT);
-            die(); // destruye la sesión, y vuelve al login
-        } 
-        $_SESSION['LAST_ACTIVITY'] = time();
-    }
+    //     if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 5000)) { 
+    //         header("Location: " . URL_LOGOUT);
+    //         die(); // destruye la sesión, y vuelve al login
+    //     } 
+    //     $_SESSION['LAST_ACTIVITY'] = time();
+    // }
 
     public function GetActores(){
-        $this->checkLogIn();
+        //$this->checkLogIn();
         $actores = $this->model->GetActores();
         $this->view->DisplayActores($actores);
     }
 
     public function InsertarActor(){
-        $this->checkLogIn();
-        // $finalziada = 0;
-        // if($_POST['finalizada'] == 'on'){
-        //     $finalziada = 1;
-        // }
-        $this->model->InsertarActor($_POST['nombre'],$_POST['edad'],$_POST['producciones']);
-        header("Location: " . BASE_URL);
+        //$this->checkLogIn();
+        $nombre = $_POST['nombre'];
+        $edad = $_POST['edad'];
+        $producciones = $_POST['producciones'];
+        if((!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
+            $this->model->InsertarActor($nombre, $edad, $producciones);
+            header("Location: " . BASE_URL);
+        }else{
+            echo "Sos horrible";
+            
+        }
     }
 
-    public function EditarActor($id){
-        $this->checkLogIn();
-        $this->model->EditarActor($id);
-        header("Location: " . BASE_URL);
+    public function EditarActor($id_actor){
+        //$this->checkLogIn();
+
+        $this->model->EditarActor($_POST['nombre'],$_POST['edad'],$_POST['producciones'], $id_actor);
+        header("Location: " . actores);
     }
 
-    public function BorrarActor($id){
-        $this->checkLogIn();
-        $this->model->BorrarActor($id);
+    public function BorrarActor($params=null){
+        //$this->checkLogIn();
+        $id_actor = $params [':ID'];
+        $this->model->BorrarActor($id_actor);
         header("Location: " . BASE_URL);
     }
 }
