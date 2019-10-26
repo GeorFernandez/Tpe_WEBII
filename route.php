@@ -1,8 +1,8 @@
 <?php
 
 
-require_once "Controllers/ActoresController.php";
-require_once "Controllers/UserController.php";
+require_once ("Controllers/ActoresController.php");
+require_once ("Controllers/UserController.php");
 
 $action = $_GET["action"];
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');

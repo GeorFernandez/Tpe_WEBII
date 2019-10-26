@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2019 a las 00:52:34
+-- Tiempo de generación: 26-10-2019 a las 15:31:09
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -76,6 +76,18 @@ INSERT INTO `dorama` (`id_dorama`, `nombre`, `genero`, `sinopsis`, `cant_capitul
 (11, 'lalala', 'drama', 'lo lo lo', 12, 1, 1),
 (12, 'lelele', 'romance', 'lilili', 14, 0, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Índices para tablas volcadas
 --
@@ -94,6 +106,12 @@ ALTER TABLE `dorama`
   ADD KEY `fk_dorama_actor` (`id_actor`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -108,6 +126,12 @@ ALTER TABLE `actor`
 --
 ALTER TABLE `dorama`
   MODIFY `id_dorama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
