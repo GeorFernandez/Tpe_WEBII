@@ -2,7 +2,7 @@
 // require_once ("Controllers/ActoresController.php");
 // require_once ("Controllers/UserController.php");
 // require_once ("Controllers/DoramasController.php");
-// require_once ("Views/indexView.php");
+require_once ("Views/indexView.php");
 
 require_once ("Router.php");
 require_once ("Controllers/DoramasController.php");
@@ -11,24 +11,26 @@ require_once ("Controllers/ActoresController.php");
 define ("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define ("DORAMAS", BASE_URL . 'doramas');
 define ("ACTORES", BASE_URL . 'actores');
+define ("LOGIN", BASE_URL . 'login');
+
 
 // instancia el router
 $router = new Router();
 
 // arma la tabla de ruteo
 $router->addRoute('actores', 'GET', 'ActoresController', 'GetActores');
-//$router->addRoute('doramas/:ID', 'GET', 'DoramasController', 'GetDorama');
+$router->addRoute('actores/:ID', 'GET', 'ActoresController', 'GetActor');
 $router->addRoute('BorrarActor/:ID', 'GET', 'ActoresController', 'BorrarActor');
 $router->addRoute('insertar', 'POST', 'ActoresController', 'InsertarActor');
-// $router->addRoute("tareas/:ID", "PUT", "ActoresApiController", "updateActor");
+$router->addRoute('EditarActor', 'PUT', 'ActoresController', 'EditarActor');
 
 // arma la tabla de ruteo
-$router->addRoute("doramas", "GET", "DoramasController", "GetDoramas");
-//$router->addRoute("doramas/:ID", "GET", "DoramasController", "GetDorama");
-$router->addRoute("doramas/:ID", "DELETE", "DoramasController", "BorrarDorama");
-$router->addRoute("doramas", "POST", "DoramasController", "InsertarDorama");
-// $router->addRoute("tareas/:ID", "PUT", "ActoresApiController", "updateActor");
-$router->setDefaultRoute("ActoresController", "GetActores");
+$router->addRoute('doramas', 'GET', 'DoramasController', 'GetDoramas');
+$router->addRoute('doramas/:ID', 'GET', 'DoramasController', 'GetDorama');
+$router->addRoute('BorrarDorama/:ID', 'GET', 'DoramasController', 'BorrarDorama');
+$router->addRoute('insertarDorama', 'POST', 'DoramasController', 'InsertarDorama');
+$router->addRoute("EditarDorama/:ID", "PUT", "DoramasController", "EditarDorama");
+$router->setDefaultRoute('indexView', 'DisplayIndex');
 
 // rutea
 $router->route($_GET['action'], $_SERVER['REQUEST_METHOD']);

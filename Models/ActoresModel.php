@@ -15,23 +15,17 @@ class ActoresModel {
         return $actores;
     }
     
-    public function GetActor($id_actor){
-        $sentencia = $this->db->prepare( "select * from actor where id = ?");
-        $sentencia->execute([$id_actor]);
-        $actor = $sentencia->fetch(PDO::FETCH_OBJ);
-        return $actor;
-    }
-
-    public function InsertarActor($nombre,$edad,$producciones){
-        $sentencia = $this->db->prepare("INSERT INTO actor(nombre, edad,producciones) VALUES(?,?,?)");
-        $sentencia->execute(array($nombre,$edad,$producciones));
-    }
-
-    // public function FinalizarTarea($id){
-    //     $sentencia =  $this->db->prepare("UPDATE tarea SET finalizada=1 WHERE id=?");
-    //     $sentencia->execute(array($id));
+    // public function GetActor($id_actor){
+    //     $sentencia = $this->db->prepare( "select * from actor where id = ?");
+    //     $sentencia->execute([$id_actor]);
+    //     $actor = $sentencia->fetch(PDO::FETCH_OBJ);
+    //     return $actor;
     // }
 
+    public function InsertarActor($id_actor,$nombre,$edad,$producciones){
+        $sentencia = $this->db->prepare("INSERT INTO actor(id_actor,nombre, edad,producciones) VALUES(?,?,?,?)");
+        $sentencia->execute(array($id_actor,$nombre,$edad,$producciones));
+    }
     public function EditarActor($id, $nombre, $edad, $producciones){
         $sentencia =  $this->db->prepare("UPDATE actor SET nombre=?, edad=?, producciones=? WHERE id=?");
         $sentencia->execute(array($nombre, $edad, $producciones, $id));

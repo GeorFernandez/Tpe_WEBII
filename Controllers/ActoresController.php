@@ -23,7 +23,7 @@ class ActoresController {
 
     //     if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 5000)) { 
     //         header("Location: " . URL_LOGOUT);
-    //         die(); // destruye la sesión, y vuelve al login
+    //         die(); 
     //     } 
     //     $_SESSION['LAST_ACTIVITY'] = time();
     // }
@@ -36,30 +36,28 @@ class ActoresController {
 
     public function InsertarActor(){
         //$this->checkLogIn();
+        $id_actor = $_POST['id_actor'];
         $nombre = $_POST['nombre'];
         $edad = $_POST['edad'];
         $producciones = $_POST['producciones'];
-        if((!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
-            $this->model->InsertarActor($nombre, $edad, $producciones);
-            header("Location: " . BASE_URL);
-        }else{
-            echo "Sos horrible";
-            
+        if((!empty($id_actor))&&(!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
+            $this->model->InsertarActor($id_actor,$nombre,$edad,$producciones); 
         }
+        header("Location: " . ACTORES);
     }
 
-    public function EditarActor($id_actor){
+    public function EditarActor($params=null){
         //$this->checkLogIn();
-
+        $id_actor = $params [':ID'];
         $this->model->EditarActor($_POST['nombre'],$_POST['edad'],$_POST['producciones'], $id_actor);
-        header("Location: " . actores);
+        header("Location: " . ACTORES);
     }
 
     public function BorrarActor($params=null){
         //$this->checkLogIn();
         $id_actor = $params [':ID'];
         $this->model->BorrarActor($id_actor);
-        header("Location: " . BASE_URL);
+        header("Location: " . ACTORES);
     }
 }
 

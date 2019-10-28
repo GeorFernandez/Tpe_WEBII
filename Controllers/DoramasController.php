@@ -23,7 +23,7 @@ class DoramasController {
 
     //     if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 5000)) { 
     //         header("Location: " . URL_LOGOUT);
-    //         die(); // destruye la sesión, y vuelve al login
+    //         die(); 
     //     } 
     //     $_SESSION['LAST_ACTIVITY'] = time();
     // }
@@ -36,21 +36,21 @@ class DoramasController {
 
     public function InsertarDorama(){
         $this->model->InsertarDorama($_POST['nombre'],$_POST['genero'],$_POST['sinopsis'],$_POST['cant_capitulos'],$_POST['en_emision'], $_POST['id_actor']);
-        header("Location: " . doramas);
+        header("Location: " . DORAMAS);
     }
 
     public function EditarDorama($id_dorama){
         //$this->checkLogIn();
 
         $this->model->EditarDorama($_POST['nombre'],$_POST['genero'],$_POST['sinopsis'],$_POST['cant_capitulos'],$_POST['en_emision'], $_POST['id_actor'],$id_dorama);
-        //header("Location: " . doramas);
+        header("Location: " . DORAMAS);
     }
 
     public function BorrarDorama($params=null){
         //$this->checkLogIn();
         $id_dorama=$params[':ID'];
         $this->model->BorrarDorama($id_dorama);
-        //header("Location: " . doramas);
+        header("Location: " . DORAMAS);
     }
 }
 

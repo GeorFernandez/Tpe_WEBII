@@ -21,9 +21,9 @@ class UserController {
             session_start();
             $_SESSION['user'] = $usuario->email;
             $_SESSION['userId'] = $usuario->id;
-            header("Location: " . URL_ACTOR);
+            header("Location: " . ACTORES);
         }else{
-            header("Location: " . URL_LOGIN);
+            header("Location: " . LOGIN);
         }
        // header("Location: " . BASE_URL);
     }
@@ -35,7 +35,7 @@ class UserController {
     public function Logout(){
         session_start();
         session_destroy();
-        header("Location: " . URL_LOGIN);
+        header("Location: " . LOGIN);
     }
 
     

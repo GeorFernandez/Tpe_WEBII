@@ -4,19 +4,16 @@ require_once('libs/Smarty.class.php');
 
 
 class indexView {
-    private $smarty;
-    private $titulo= 'OH! My Dorama';
+   
     function __construct(){
-        $this->smarty = new Smarty();
-        $this->smarty->assign('basehref', BASE_URL);
+        
         
     }
 
-    public function DisplayIndex($titulo){
+    public function DisplayIndex(){
 
         $smarty = new Smarty();
-        $smarty->assign('titulo',$titulo);
-        $smarty->assign('tituloPag',"Home");
+        $smarty->assign('titulo','OH! My DORAMA');
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->display('templates/index.tpl');
     }  
