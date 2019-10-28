@@ -1,12 +1,12 @@
 {include file="header.tpl"}
     <div class="contenido">       
         <h1>Mis Actores</h1>
-            <form action="insertar" method="post">
+            <form action="EditarActor" method="post">
                     <input type="text" name="id_actor" placeholder="ID">
                     <input type="text" name="nombre" placeholder="Nombre">
                     <input type="number" name="edad"  placeholder="Edad">
                     <input type="text" name="producciones" placeholder="Producciones">
-                    <input type="submit" value="Insertar">
+                    <input type="submit" value="Editar">
             </form>
         <table id="info">
             <tr>
@@ -17,9 +17,9 @@
                 <th class="th">Borrar</th>
                 <th class="th">Editar</th>
             </tr>  
-            {foreach from=$lista_actores item=actor}
+            {foreach from=$actor item=dato}
                <tr> <td>{$actor->id_actor}</td><td>{$actor->nombre}</td><td>{$actor->edad}</td><td>{$actor->producciones}</td> 
-                    <td><a href='BorrarActor/{$actor->id_actor}'>BORRAR</a></td>
+                    <td><a href='EditarActor/{$actor->id_actor}'>EDITAR</a></td>
                </tr>
             {/foreach}
         </table>

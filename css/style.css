@@ -32,9 +32,12 @@
     font-variant: small-caps;
     margin-top: 5%;
 }
-#nombre{
-    color: aliceblue;
-    display: inline-block;
+h1{
+    color: rgb(238, 151, 151);
+    -webkit-text-stroke: 2px black;
+    font-family: cursive;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
 }
 header{
     background-image: url(images/moon.jpg);
@@ -71,8 +74,31 @@ li::before{
     margin-right: 0.5em;
     text-align: right;
 }
+.contenido{
+    margin-left: 3%;
+}
 .table th{
     padding: 1%;
+}
+td{
+    padding: 1%;
+    width: 9rem;
+    color: lightpink;
+    -webkit-text-stroke: 1px black;
+    font-size: 1rem;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+.th{
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+.ranking{
+    color: lightpink;
+    -webkit-text-stroke: 1px black;
+    margin-left: 3%;
 }
 footer{
     background: rgb(27, 26, 26);

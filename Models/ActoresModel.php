@@ -15,12 +15,12 @@ class ActoresModel {
         return $actores;
     }
     
-    // public function GetActor($id_actor){
-    //     $sentencia = $this->db->prepare( "select * from actor where id = ?");
-    //     $sentencia->execute([$id_actor]);
-    //     $actor = $sentencia->fetch(PDO::FETCH_OBJ);
-    //     return $actor;
-    // }
+    public function GetActor($id_actor){
+        $sentencia = $this->db->prepare( "select * from actor where id = ?");
+        $sentencia->execute([$id_actor]);
+        $actor = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $actor;
+    }
 
     public function InsertarActor($id_actor,$nombre,$edad,$producciones){
         $sentencia = $this->db->prepare("INSERT INTO actor(id_actor,nombre, edad,producciones) VALUES(?,?,?,?)");

@@ -34,6 +34,12 @@ class ActoresController {
         $this->view->DisplayActores($actores);
     }
 
+    public function GetActor($params=null){
+        $id_actor = $params [':ID'];
+        $actor = $this->model->GetActor($id_actor);
+        $this->view->DisplayActor($actor);
+    }
+
     public function InsertarActor(){
         //$this->checkLogIn();
         $id_actor = $_POST['id_actor'];
@@ -49,7 +55,9 @@ class ActoresController {
     public function EditarActor($params=null){
         //$this->checkLogIn();
         $id_actor = $params [':ID'];
-        $this->model->EditarActor($_POST['nombre'],$_POST['edad'],$_POST['producciones'], $id_actor);
+        if((!empty($id_actor))&&(!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
+            $this->model->EditarActor($_POST['nombre'],$_POST['edad'],$_POST['producciones'], $id_actor);
+        }
         header("Location: " . ACTORES);
     }
 
