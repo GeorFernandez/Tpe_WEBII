@@ -1,28 +1,23 @@
 {include file="header.tpl"}
     <div class="contenido">       
         <h1>Mis Doramas</h1>
+        
             <form action="insertarDorama" method="post">
                 <input type="text" name="nombre" placeholder="Nombre">
                 <input type="text" name="genero"  placeholder="Género">
                 <input type="text" name="sinopsis"  placeholder="Sinopsis">
-                <input type="number" name="cant_capitulos"  placeholder="Cantidad de capítulos">
-                <input type="boolean" name="en_emision" placeholder="En emisión">
-                <input type="text" name="id_actor"  placeholder="Id Actor">
-                  {* <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Seleccione el ID de su actor:
-                        </button>
-            
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">GYOO</a>
-                                <a class="dropdown-item" href="#">KJSO</a>
-                                <a class="dropdown-item" href="#">LDWO</a>
-                                <a class="dropdown-item" href="#">LJGI</a>
-                                <a class="dropdown-item" href="#">LJIU</a>
-                        </div>
-                    </div>
-                </div> *}
-                <input type="submit" value="InsertarDorama">
+                <input type="number" class= "tinyInt" name="cant_capitulos"  placeholder="Capítulos">
+                <input type="boolean" class= "tinyInt" name="en_emision" placeholder="En emisión">
+                <form class="form-inline">
+                    <select class="seleccion custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Seleccione el ID de su actor</option>
+                        <option value="1">GYOO</option>
+                        <option value="2">LJGI</option>
+                        <option value="3">LJIU</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary my-1">Submit</button>
+                </form>
+                <input type="submit" value="Insertar Dorama">
             </form>
         <table id="info">
                 <tr>

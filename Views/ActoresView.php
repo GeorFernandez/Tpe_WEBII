@@ -21,6 +21,13 @@ class ActoresView {
         $smarty->assign('actor_edit',$actor);
         $smarty->display('templates/editar_actores.tpl');
     }
+    public function DisplayForm(){
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"OH! My DORAMA");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->assign('actores_form',$actor);
+        $smarty->display('templates/actores_form.tpl');
+    }
 }
 
 ?>
