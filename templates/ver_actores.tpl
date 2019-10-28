@@ -16,5 +16,6 @@
             {/foreach}
         </table>
         <a href='BorrarActor/{$actor->id_actor}'>INSERTAR ACTOR</a>
+        <a href='BorrarActor/{$actor->id_actor}'>EDITAR ACTOR</a>
     </div>
 {include file="footer.tpl"}
