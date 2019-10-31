@@ -135,6 +135,12 @@ footer a:hover{
 .tinyInt{
     width: 7%;
 }
+a{
+    color: black;
+}
+a:hover{
+    color: pink;
+}
 
 
  

@@ -1,5 +1,5 @@
 <?php
-	$hash = password_hash("web2", PASSWORD_DEFAULT);
+	$hash = password_hash($password, PASSWORD_DEFAULT);
 	echo "Hash:" . $hash
 
 ?>

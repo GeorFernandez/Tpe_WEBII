@@ -33,6 +33,11 @@ class DoramasController {
         $doramas = $this->model->GetDoramas();
         $this->view->DisplayDoramas($doramas);
     }
+    public function GetDoramasNoLog(){
+        //$this->checkLogIn();
+        $doramas = $this->model->GetDoramas();
+        $this->view->DisplayDoramasNoLog($doramas);
+    }
 
     public function InsertarDorama(){
         $this->model->InsertarDorama($_POST['nombre'],$_POST['genero'],$_POST['sinopsis'],$_POST['cant_capitulos'],$_POST['en_emision'], $_POST['id_actor']);

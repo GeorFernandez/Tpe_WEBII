@@ -3,7 +3,7 @@
 require_once('libs/Smarty.class.php');
 
 class ActoresView {
-
+    private $smarty;
     function __construct(){
 
     }
@@ -14,6 +14,13 @@ class ActoresView {
         $smarty->assign('lista_actores',$actores);
         $smarty->display('templates/ver_actores.tpl');
     }
+    public function DisplayActoresNoLog($actores){
+        $smarty = new Smarty();
+        $smarty->assign('titulo',"OH! My DORAMA");
+        $smarty->assign('BASE_URL',BASE_URL);
+        $smarty->assign('lista_actores',$actores);
+        $smarty->display('templates/actoresNoLog.tpl');
+    }
     public function DisplayActor($actor){
         $smarty = new Smarty();
         $smarty->assign('titulo',"OH! My DORAMA");
@@ -21,12 +28,11 @@ class ActoresView {
         $smarty->assign('actor_edit',$actor);
         $smarty->display('templates/editar_actores.tpl');
     }
-    public function DisplayForm(){
+    public function DisplayActoresForm($actor){
         $smarty = new Smarty();
-        $smarty->assign('titulo',"OH! My DORAMA");
         $smarty->assign('BASE_URL',BASE_URL);
-        $smarty->assign('actores_form',$actor);
-        $smarty->display('templates/actores_form.tpl');
+        $smarty->assign('titulo',"OH! My DORAMA");
+        $smarty->display('templates/editar_actores.tpl');
     }
 }
 

@@ -14,6 +14,12 @@ class DoramasModel {
         $doramas = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $doramas;
     }
+    public function GetDoramasNoLog(){
+        $sentencia = $this->db->prepare( "select * from dorama");
+        $sentencia->execute();
+        $doramas = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $doramas;
+    }
     
     // public function GetDorama($id_dorama){
     //     $sentencia = $this->db->prepare( "select * from dorama where id = ?");

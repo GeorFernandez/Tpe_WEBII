@@ -23,7 +23,7 @@
                             <div class="navbar-nav">
                                 <a class="nav-item nav-link active" href='actores'>Actores</a>
                                 <a class="nav-item nav-link active" href='doramas'>Doramas</a>
-                                <a class="nav-item nav-link active" href="" target="_blank">Login Administrador</a> 
+                                <a class="nav-item nav-link active" href='login' target="_blank">Registrarse</a> 
                             </div>
                         </div>
                     </nav>
