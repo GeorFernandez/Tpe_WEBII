@@ -22,9 +22,9 @@ class ActoresModel {
         return $actor;
     }
 
-    public function InsertarActor($id_actor,$nombre,$edad,$producciones){
-        $sentencia = $this->db->prepare("INSERT INTO actor(id_actor,nombre, edad,producciones) VALUES(?,?,?,?)");
-        $sentencia->execute(array($id_actor,$nombre,$edad,$producciones));
+    public function InsertarActor($nombre,$edad,$producciones){
+        $sentencia = $this->db->prepare("INSERT INTO actor(nombre, edad,producciones) VALUES(?,?,?)");
+        $sentencia->execute(array($nombre,$edad,$producciones));
     }
     public function EditarActor($id, $nombre, $edad, $producciones){
         $sentencia =  $this->db->prepare("UPDATE actor SET nombre=?, edad=?, producciones=? WHERE id=?");

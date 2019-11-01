@@ -27,12 +27,16 @@ class LoginModel {
     }
 
     public function GetPassword($user){
-        $sentencia = $this->db->prepare( "SELECT * FROM usuarios WHERE email = ?");
+        $sentencia = $this->db->prepare( "SELECT password FROM usuarios WHERE email = ?");
         $sentencia->execute(array($user));
         
         $password = $sentencia->fetch(PDO::FETCH_OBJ);
         
         return $password;
+    }
+    public function agregarUsuario($email,$password){
+        $sentencia = $this->db->prepare("INSERT INTO usuarios(email, password) VALUES(?,?)");
+        $sentencia->execute(array($email,$password));
     }
 }
 

@@ -52,9 +52,9 @@ class LoginController {
     public function IniciarSesion(){
         $password = $_POST['password'];
 
-        $usuario = $this->model->GetPassword($_POST['user']);
+        $password_hashed = $this->model->GetPassword($_POST['user']);
 
-        if (isset($usuario) && $usuario != null && password_verify($password, $usuario->password)){
+        if (isset($usuario) && $usuario != null && password_verify($password, $password_hashed)){
             session_start();
             $_SESSION['user'] = $usuario->email;
             $_SESSION['userId'] = $usuario->id;
@@ -63,6 +63,10 @@ class LoginController {
             header("Location: " . LOGIN);
         }
        // header("Location: " . BASE_URL);
+    }
+    public function agregarUsuario(){
+        $this->model->agregarUsuario($_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT));
+        header("Location: " . LOGIN);
     }
 
     public function Login(){

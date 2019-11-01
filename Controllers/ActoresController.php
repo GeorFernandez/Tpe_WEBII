@@ -47,7 +47,7 @@ class ActoresController {
     public function TraerActor($params=null){
         $id_actor = $params [':ID'];
         $actor = $this->model->GetActor($id_actor);
-        $this->view->DisplayActorForm($actor);
+        $this->view->DisplayActoresForm($actor);
     }
 
     public function InsertarActor(){
@@ -56,8 +56,8 @@ class ActoresController {
         $nombre = $_POST['nombre'];
         $edad = $_POST['edad'];
         $producciones = $_POST['producciones'];
-        if((!empty($id_actor))&&(!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
-            $this->model->InsertarActor($id_actor,$nombre,$edad,$producciones); 
+        if((!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
+            $this->model->InsertarActor($nombre,$edad,$producciones); 
         }
         header("Location: " . ACTORES);
     }

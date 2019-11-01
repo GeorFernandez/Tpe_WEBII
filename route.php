@@ -19,6 +19,7 @@ $router->addRoute('doramas', 'GET', 'DoramasController', 'GetDoramas');
 $router->addRoute('doramas/:ID', 'GET', 'DoramasController', 'GetDorama');
 $router->addRoute('borrarDorama/:ID', 'GET', 'DoramasController', 'BorrarDorama');
 $router->addRoute('insertarDorama', 'POST', 'DoramasController', 'InsertarDorama');
+$router->addRoute('formularioEdicionDorama/:ID','GET','DoramasController','TraerDorama');
 $router->addRoute("editarDorama/:ID", "POST", "DoramasController", "EditarDorama");
 
 
@@ -33,8 +34,8 @@ $router->addRoute('formularioEdicion/:ID','GET','ActoresController','TraerActor'
 $router->addRoute('editarActor/:ID', 'POST', 'ActoresController', 'EditarActor');
 
 //login 
-
 $router->addRoute('login','GET','LoginController','login');
+$router->addRoute('register','POST','LoginController','agregarUsuario');
 $router->addRoute('verify','POST','LoginController','IniciarSesion');
 
 $router->setDefaultRoute('indexView', 'DisplayIndex');
