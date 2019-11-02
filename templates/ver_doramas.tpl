@@ -22,7 +22,7 @@
                     <td>{$dorama->cant_capitulos}</td>
                     <td>{$dorama->en_emision}</td>
                     <td>{$dorama->id_actor}</td>
-                    <td>{$dorama->nombre}</td>
+                    <td>{$dorama->nombreActor}</td>
                     <td><a href='borrarDorama/{$dorama->id_dorama}'>BORRAR</a></td> 
                     <td><a href='formularioEdicionDorama/{$dorama->id_dorama}'>EDITAR</a></td>
                 </tr>

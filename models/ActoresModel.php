@@ -9,7 +9,7 @@ class ActoresModel {
     }
 
 	public function GetActores(){
-        $sentencia = $this->db->prepare( "select * from actor");
+        $sentencia = $this->db->prepare( "select * from actor order by nombre asc");
         $sentencia->execute();
         $actores = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $actores;

@@ -9,14 +9,14 @@ class DoramasModel {
     }
 
 	public function GetDoramas(){
-        $sentencia = $this->db->prepare( "select * from dorama");
+        $sentencia = $this->db->prepare( "select * from dorama order by nombre asc");
         $sentencia->execute();
         $doramas = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $doramas;
     }
 
     public function GetDoramasConActores(){
-        $sentencia = $this->db->prepare( "select * from dorama d, actor a where d.id_actor = a.id_actor");
+        $sentencia = $this->db->prepare( "select d.id_dorama,d.nombre,d.genero,d.sinopsis,d.cant_capitulos,d.en_emision,d.id_actor, a.nombre as 'nombreActor' from dorama d, actor a where d.id_actor = a.id_actor order by nombre asc");
         $sentencia->execute();
         $doramas = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $doramas;
