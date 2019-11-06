@@ -30,7 +30,7 @@ $router->addRoute('actores', 'GET', 'ActoresController', 'GetActores');
 $router->addRoute('actores/:ID', 'GET', 'ActoresController', 'GetActor');
 $router->addRoute('borrarActor/:ID', 'GET', 'ActoresController', 'BorrarActor');
 $router->addRoute('insertar', 'POST', 'ActoresController', 'InsertarActor');
-$router->addRoute('formularioEdicion/:ID','GET','ActoresController','TraerActor');
+$router->addRoute('formularioEdicion/:ID','GET','ActoresController','MostrarEditarActor');
 $router->addRoute('editarActor/:ID', 'POST', 'ActoresController', 'EditarActor');
 
 //login 

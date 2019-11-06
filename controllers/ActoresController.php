@@ -44,9 +44,11 @@ class ActoresController {
         $actor = $this->model->GetActor($id_actor);
         $this->view->DisplayActor($actor);
     }
-    public function TraerActor($params=null){
+    public function MostrarEditarActor($params=null){
         $id_actor = $params [':ID'];
+        //var_dump($id_actor);die;
         $actor = $this->model->GetActor($id_actor);
+        
         $this->view->DisplayActoresForm($actor);
     }
 
@@ -56,19 +58,21 @@ class ActoresController {
         $nombre = $_POST['nombre'];
         $edad = $_POST['edad'];
         $producciones = $_POST['producciones'];
+        
         if((!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
             $this->model->InsertarActor($nombre,$edad,$producciones); 
         }
         header("Location: " . ACTORES);
     }
 
-    public function EditarActor($id_actor){
+    public function EditarActor(){
         //$this->checkLogIn();
-        $this->view->DisplayActoresForm($actor);
-        $nombre = $_PUT['nombre'];
-        $edad = $_PUT['edad'];
-        $producciones = $_PUT['producciones'];
-        if((!empty($nombre))&&(!empty($edad))&&(!empty($producciones))){
+        $nombre = $_POST['nombre'];
+        $edad = $_POST['edad'];
+        $producciones = $_POST['producciones'];
+        $id_actor = $_POST['id_actor'];
+        $save = $_POST['save'];
+        if((isset($save))&&(!empty($nombre))&&(!empty($edad))&&(!empty($producciones))&&(!empty($id_actor))){
             $this->model->EditarActor($id_actor,$nombre, $edad,$producciones);
             header("Location: " . ACTORES);
         }

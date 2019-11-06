@@ -32,6 +32,7 @@ class ActoresView {
         $smarty = new Smarty();
         $smarty->assign('BASE_URL',BASE_URL);
         $smarty->assign('titulo',"OH! My DORAMA");
+        $smarty->assign('actor',$actor);
         $smarty->display('templates/editar_actores.tpl');
     }
 }

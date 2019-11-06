@@ -16,7 +16,7 @@ class ActoresModel {
     }
     
     public function GetActor($id_actor){
-        $sentencia = $this->db->prepare( "select * from actor where id = ?");
+        $sentencia = $this->db->prepare( "select * from actor where id_actor = ?");
         $sentencia->execute([$id_actor]);
         $actor = $sentencia->fetch(PDO::FETCH_OBJ);
         return $actor;
@@ -26,9 +26,9 @@ class ActoresModel {
         $sentencia = $this->db->prepare("INSERT INTO actor(nombre, edad,producciones) VALUES(?,?,?)");
         $sentencia->execute(array($nombre,$edad,$producciones));
     }
-    public function EditarActor($id, $nombre, $edad, $producciones){
-        $sentencia =  $this->db->prepare("UPDATE actor SET nombre=?, edad=?, producciones=? WHERE id=?");
-        $sentencia->execute(array($nombre, $edad, $producciones, $id));
+    public function EditarActor($id_actor, $nombre, $edad, $producciones){
+        $sentencia =  $this->db->prepare("UPDATE actor SET nombre=?, edad=?, producciones=? WHERE id_actor=?");
+        $sentencia->execute(array($nombre, $edad, $producciones, $id_actor));
     }
 
     public function BorrarActor($id_actor){

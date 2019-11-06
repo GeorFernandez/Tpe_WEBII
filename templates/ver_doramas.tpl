@@ -34,16 +34,14 @@
                 <input type="text" name="sinopsis"  placeholder="Sinopsis">
                 <input type="number" name="cant_capitulos"  placeholder="Cantidad de capítulos">
                 <input type="text" name="en_emision" placeholder="En emisión">
-                <input type="text" name="id_actor"  placeholder="Actor"> 
-                {* <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            {foreach from=$lista_actores item=actor}
-                                <a class="dropdown-item" href="#">{$actor->nombre}</a>
-                            {/foreach}
-                    </div>
-                </div> *}
+                {* <input type="text" name="id_actor"  placeholder="Actor">  *}
+               <select>
+                    {foreach from=$lista_doramas item=dorama}
+                        <option>{$dorama->id_actor}</option>
+                    {/foreach}
+                </select>
                 <input type="submit" value="InsertarDorama">
             </form>
     </div>
 {include file="footer.tpl"}
+                            
